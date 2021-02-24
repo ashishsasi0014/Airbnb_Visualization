@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!--        D3 -->
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <link rel="stylesheet" href="css/styles.css">
+
+        <title>Airbnb Visualization</title>
+<!--        Loading geoJson-->
+        <script src="data/geoJSON.json"></script>
+        <script src="data/listing.json"></script>
+    </head>
+    <body id="body">
+        <div class="container">
+            <nav class="navbar navbar-dark bg-dark sticky-top">
+                <a class="navbar-brand" href="#">Airbnb</a>
+            </nav>
+        </div>
+        <h1>Airbnb Visualization - Price Exploration</h1>
+        <div id="intro">
+            <div id="intro-text" >
+                <p>
+                    Airbnb is an online marketplace that connects people who want to rent out their homes with
+                    people who are looking for accommodations in that locale. It is currently available in more
+                    than 81000 cities and 191 countries worldwide and is a viable option for visitors as it helps
+                    them connect and stay with the locals at a reasonable price.
+                    Staying in an Airbnb offers a lot of advantages over traditional hotels for prospective
+                    travellers to that locale. Airbnb are on an average cheaper than some of the high tier
+                    traditional hotels, while offering amenities of the same level.
+                    Airbnb also provides an opportunity to travellers to experience and understand the local
+                    culture better though their Airbnb hosts, who are often locals themselves.<br>
+                    Throughout this project a central question has been what are the factors effecting the price of a listing.
+                    Through using the techniques learned in the unit we have narrowed it down to a few facotrs which you will be seeing further below.
+                    The correlation matrix allows you to see the correlation between the different attributes available to us in teh dataset.
+                    Click on a cell if allow you to do a more indepth analysis of the attributes and their relation.<br>
+                    <br>
+                    The map shown is a map of Boston Neighbourhood with all the listing available on the dataset overalid on it. As we can see at a glance, <u>Airbnb business is booming.</u>
+                </p>
+            </div>
+            <div id="map"></div>
+        </div>
+        <div id="graphs">
+            <div id="correlation-matrix">
+                <div id="heatmap">
+                    
+                </div>
+
+                <div>
+                    <h2>
+                        Correlation Matrix
+                    </h2>
+                    <p>
+                        A correlation matrix is a table showing correlation coefficients between variables. Each cell in the table shows the correlation between the two variables. <br><br>
+                        By <u>clicking</u> on the cell you can change the below 2 plots, to get a better feel of how the attributes are correlated.<br><br>
+                        By <u>hovering</u> over the cells we can see the correlation value between the attributes.<br><br>
+                        Positive correlation are in green, while negative correlation are in blue.
+                    </p>
+                    <img id="correlation-scale" src="cool.png">
+                </div>
+                
+            </div>
+            <div id="numerical-graph">
+                <div id="scatterplot"></div>
+                <div>
+                    <h2>Scatter Plot:</h2>
+                    <p>
+                        We use this plot to determine if there is any type of relation between our selected attributes.
+                        For a few attributes we might see a linear, exponential or logarithmic relation between the data of our attributes.
+                        Hovering over a point gives us the x and y value of the point.
+                    </p>
+                </div>
+                <div id="histogram">
+                    <input type="number" min="1" max="150" step="20" value="5" id="nBin">
+                </div>
+                <div>
+                    <h2>Histogram:</h2>
+                    <p>
+                        We use this diagram to get a better understanding of the distribution of our data. We can get a quick overview of how our
+                        data is segregated among different ranges. We can change the bin size using the provided input box.
+                        Hovering over the bar gives us the tid-bits about the selected range.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="airbnb-logo-container">
+            <img src="airbnb_logo.png" id="airbnb-logo">
+        </div>
+        <script src="js/histogram.js"></script>
+        <script src="js/scatterplot.js"></script>
+        <script src="js/heatmap.js"></script>
+        <script src="js/maplistings.js"></script>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
